@@ -60,4 +60,9 @@ export class ProductListComponent {
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];
+  showImage: boolean = false;
+
+  toggleImage():void{
+    this.showImage = !this.showImage;
+  }
 }
