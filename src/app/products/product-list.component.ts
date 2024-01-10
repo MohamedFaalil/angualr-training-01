@@ -61,6 +61,7 @@ export class ProductListComponent {
     }
   ];
   showImage: boolean = false;
+  listFilter: string = 'sample filtering phrase';
 
   toggleImage():void{
     this.showImage = !this.showImage;
