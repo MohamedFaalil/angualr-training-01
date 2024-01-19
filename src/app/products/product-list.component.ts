@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {IProduct} from "./iproduct";
 
 @Component({
   selector: 'pm-product',
@@ -8,7 +9,7 @@ export class ProductListComponent {
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;
-  products: any[] = [
+  products: IProduct[] = [
     {
       "productId": 1,
       "productName": "Leaf Rake",
@@ -37,7 +38,7 @@ export class ProductListComponent {
       "description": "Curved claw steel hammer",
       "price": 8.9,
       "starRating": 4.8,
-      "imageUrl": "assets/images/hammer.png"
+      "imageUrl": "assets/images/hammer.png",
     },
     {
       "productId": 8,
