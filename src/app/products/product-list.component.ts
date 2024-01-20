@@ -62,8 +62,27 @@ export class ProductListComponent implements OnInit{
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];
+  filteredProducts: IProduct[] = [];
   showImage: boolean = false;
-  listFilter: string = 'sample filtering phrase';
+  private _listFilter: string = '';
+
+  get listFilter():string{
+    return this._listFilter;
+  }
+  set listFilter(value: string){
+    this._listFilter = value;
+    console.log('In setter:' + this.listFilter);
+    this.filteredProducts = this.performFilter(value);
+  }
+
+  performFilter(value: string): IProduct[]{
+    return this.products.filter((product: IProduct)=> {
+      const filterKeyword: string = value.toLowerCase().trim();
+      return product.productName.toLowerCase().includes(filterKeyword) ||
+        product.productCode.toLowerCase().includes(filterKeyword) ||
+        product.price === Number(value) || Math.floor(product.price) === Number(value);
+    });
+  }
 
   toggleImage():void{
     this.showImage = !this.showImage;
@@ -71,5 +90,6 @@ export class ProductListComponent implements OnInit{
 
   ngOnInit(): void {
     console.log('component is init.');
+    this.filteredProducts = [...this.products];
   }
 }
