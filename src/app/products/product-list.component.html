@@ -42,9 +42,9 @@
                 >
               </td>
               <td>{{ product.productName | titlecase }}</td>
-              <td>{{ product.productCode | uppercase }}</td>
+              <td>{{ product.productCode | uppercase | covertToSpace:'-' }}</td>
               <td>{{ product.releaseDate }}</td>
-              <td>{{ product.price | currency:'USD': 'code':'1.2-3' | uppercase }}</td>
+              <td>{{ product.price | currency:'USD': 'symbol':'1.2-3' }}</td>
               <td>{{ product.starRating }}</td>
             </tr>
           </tbody>
