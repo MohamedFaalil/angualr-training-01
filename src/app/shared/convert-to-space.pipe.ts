@@ -5,7 +5,7 @@ import {Pipe, PipeTransform} from "@angular/core";
 })
 export class ConvertToSpacePipe implements PipeTransform{
   transform(value: any, character: string): string {
-    return value.replace(value, "\t");
+    return value.replace(character, "\t");
   }
 
 }
