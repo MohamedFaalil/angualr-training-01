@@ -92,4 +92,8 @@ export class ProductListComponent implements OnInit{
     console.log('component is init.');
     this.filteredProducts = [...this.products];
   }
+
+  showClickedRating(message: string): void{
+    this.pageTitle = 'Product List: ' + message;
+  }
 }
